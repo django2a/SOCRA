@@ -27,8 +27,12 @@ public final class App {
     }
 
     public void run(){
-        adapter.write("Hello, what's your name ?");
-        String name = adapter.read();
-        adapter.write("Nice to meet you, " + name + " !");
+        String str;
+        do
+        {
+            adapter.write("Enter number: ");
+            str = adapter.read();
+            adapter.write(MorseConverter.addToSum(str));
+        } while(str != "quit");
     }
 }
